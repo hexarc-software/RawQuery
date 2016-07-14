@@ -94,10 +94,42 @@ namespace RawQuery
         /// </summary>
         /// <param name="what">The clause before the "pivot" keyword.</param>
         /// <param name="how">The clause after the "pivot" keyword.</param>
+        /// <param name="as">The clause to use the "pivot" alias</param>
         /// <returns>A "pivot" clause based on the given parameters.</returns>
         public static String Pivot(String what, String how, String @as)
         {
             return As($"{what} pivot ({how})", @as); ;
+        }
+
+        /// <summary>
+        /// Builds a "case" clause.
+        /// </summary>
+        /// <param name="what">The clause to put in a "case" clause.</param>
+        /// <returns>A "case" clause based on the given parameter.</returns>
+        public static String Case(String what)
+        {
+            return $"case {what} end";
+        }
+
+        /// <summary>
+        /// Builds a "when" clause.
+        /// </summary>
+        /// <param name="condition">The condition clause.</param>
+        /// <param name="result">The result clause.</param>
+        /// <returns>A "when" clause based on the given parameters.</returns>
+        public static String When(String condition, String result)
+        {
+            return $"when {condition} then {result}";
+        }
+
+        /// <summary>
+        /// Builds an "else" clause.
+        /// </summary>
+        /// <param name="what">The clause to put after the "else" keyword.</param>
+        /// <returns>An "else" clause based on the given parameters.</returns>
+        public static String Else(String what)
+        {
+            return $"else {what}";
         }
 
         /// <summary>

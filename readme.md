@@ -3,7 +3,7 @@ RawQuery
 
 A simple raw sql constructor.
 
-Sometimes there's a need to build complex dynamic sql queries and this is quite hard to via ORM like EntityFramework or so on.
+Sometimes there's a need to build complex dynamic sql queries and this is quite hard to do via ORM like EntityFramework or so on.
 This library just provides an ability to do such things with less pain.
 
 Here's an example how to write a simple pivot query:

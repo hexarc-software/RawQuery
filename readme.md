@@ -48,7 +48,7 @@ var income =
                 Clause.As(To.Number(6.3), "Income"),
                 Clause.As(To.String("w2"), "Worker"))));
 
-//Let's make a simple pivot to look at workers' income by days.
+//Let's make a simple pivot query to look at workers' income by days.
 var sql =
     Clause.Pivot(
         Clause.Select(
@@ -65,7 +65,7 @@ var sql =
             Logical.ForIn("Day", Format.List("[1]", "[2]", "[3]", "[4]", "[5]"))),
         "pvt");
 
-//Perform query and print the output.
+//Perform the query and print the output.
 //It may vary for different ORM and other libraries that support raw queries.
 using (var connection = new SqlConnection(connectionStirng))
 {

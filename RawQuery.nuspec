@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>RawQuery</id>
+        <version>1.0.0</version>
+        <authors>shadeglare</authors>
+        <projectUrl>https://github.com/shadeglare/RawQuery</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A simple raw sql constructor</description>
+    </metadata>
+    <files>
+        <file src="RawQuery\bin\Release\RawQuery.dll" target="lib\net45\RawQuery.dll" />
+        <file src="RawQuery\bin\Release\RawQuery.xml" target="lib\net45\RawQuery.xml" />
+    </files>
+</package>

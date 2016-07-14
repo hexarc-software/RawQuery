@@ -1,6 +1,9 @@
 RawQuery
 ===========
 
+[![Version](https://img.shields.io/nuget/v/RawQuery.svg)](https://www.nuget.org/packages/RawQuery/)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://badges.mit-license.org)
+
 A simple raw sql constructor.
 
 Sometimes there's a need to build complex dynamic sql queries and this is quite hard to do via ORM like EntityFramework or so on.

@@ -14,7 +14,7 @@ namespace RawQuery
         /// <returns>An sql string.</returns>
         public static String String(String value)
         {
-            return value == null ? "null" : $"'{value}'";
+            return value == null ? "null" : $"'{value.Replace("'", "''")}'";
         }
 
         /// <summary>

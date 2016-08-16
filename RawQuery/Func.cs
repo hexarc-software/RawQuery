@@ -49,5 +49,25 @@ namespace RawQuery
         {
             return $"sum({clause})";
         }
+
+        /// <summary>
+        /// Builds an "avg" function clause.
+        /// </summary>
+        /// <param name="clause">The clause to put into the avg function.</param>
+        /// <returns>An "avg" function clause based on the given parameter.</returns>
+        public static String Avg(String clause)
+        {
+            return $"avg({clause})";
+        }
+
+        /// <summary>
+        /// Builds a "count" function clause.
+        /// </summary>
+        /// <param name="clause">The clause to put into the count function.</param>
+        /// <returns>A "count" function clause based on the given parameter.</returns>
+        public static String Count(String clause)
+        {
+            return $"count({clause})";
+        }
     }
 }

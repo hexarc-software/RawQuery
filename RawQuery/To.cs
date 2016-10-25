@@ -18,13 +18,33 @@ namespace RawQuery
         }
 
         /// <summary>
+        /// Converts a given Int32 instance to an sql number.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <returns>An sql number.</returns>
+        public static String Number(Int32 value)
+        {
+            return value.ToString();
+        }
+
+        /// <summary>
         /// Converts a given Int32? instance to an sql number.
         /// </summary>
         /// <param name="value">The value to convert.</param>
         /// <returns>An sql number.</returns>
         public static String Number(Int32? value)
         {
-            return value == null ? "null" : value.ToString();
+            return value == null ? "null" : Number(value.Value);
+        }
+
+        /// <summary>
+        /// Converts a given Double instance to an sql number.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <returns>An sql number.</returns>
+        public static String Number(Double value)
+        {
+            return value.ToString();
         }
 
         /// <summary>
@@ -34,7 +54,17 @@ namespace RawQuery
         /// <returns>An sql number.</returns>
         public static String Number(Double? value)
         {
-            return value == null ? "null" : value.ToString();
+            return value == null ? "null" : Number(value.Value);
+        }
+
+        /// <summary>
+        /// Converts a given DateTime instance to an sql datetime literal.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <returns>An sql datetime literal.</returns>
+        public static String DateTime(DateTime value)
+        {
+            return $"'{value.ToString("yyyy-MM-dd HH:mm:ss")}'";
         }
 
         /// <summary>
@@ -44,7 +74,17 @@ namespace RawQuery
         /// <returns>An sql datetime literal.</returns>
         public static String DateTime(DateTime? value)
         {
-            return value == null ? "null" : $"'{value.Value.ToString("yyyy-MM-dd HH:mm:ss")}'";
+            return value == null ? "null" : DateTime(value.Value);
+        }
+
+        /// <summary>
+        /// Converts a given DateTime instance to an sql date literal.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <returns>An sql date literal.</returns>
+        public static String Date(DateTime value)
+        {
+            return $"'{value.ToString("yyyy-MM-dd")}'";
         }
 
         /// <summary>
@@ -54,7 +94,17 @@ namespace RawQuery
         /// <returns>An sql date literal.</returns>
         public static String Date(DateTime? value)
         {
-            return value == null ? "null" : $"'{value.Value.ToString("yyyy-MM-dd")}'";
+            return value == null ? "null" : Date(value.Value);
+        }
+
+        /// <summary>
+        /// Converts a Guid instane to an sql uniqueidentifier literal.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <returns>An sql uniqueidentifier literal.</returns>
+        public static String Guid(Guid value)
+        {
+            return $"'{value.ToString()}'";
         }
 
         /// <summary>
@@ -64,7 +114,7 @@ namespace RawQuery
         /// <returns>An sql uniqueidentifier literal.</returns>
         public static String Guid(Guid? value)
         {
-            return value == null ? "null" : $"'{value.ToString()}'";
+            return value == null ? "null" : Guid(value.Value);
         }
     }
 }
